@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 2
   script: "{{ PYTHON }} -m pip install . -vv"
   entry_points:
     - cde = chemdataextractor.cli:cli
@@ -39,6 +39,7 @@ requirements:
 test:
   commands:
     - cde
+    - pip check
   imports:
     - chemdataextractor
     - chemdataextractor.biblio
@@ -49,6 +50,9 @@ test:
     - chemdataextractor.reader
     - chemdataextractor.scrape
     - chemdataextractor.text
+  requires:
+    - pip
+
 
 about:
   home: http://chemdataextractor.org/
